@@ -9,6 +9,3 @@ span {
 .container {
   display: flex;
 }
-h1 {
-  border: red solid 2px;
-}
