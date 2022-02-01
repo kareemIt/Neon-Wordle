@@ -1,11 +1,19 @@
 h1,
 p {
   font-family: Lato;
+  text-align: center;
 }
 
 span {
   border: red solid 2px;
+  border-radius: 10px;
+  padding: 10px 10px;
+  display: flex;
 }
 .container {
   display: flex;
+  justify-content: center;
+}
+.board-container {
+  display: grid;
 }
