@@ -38,13 +38,12 @@ export default function App() {
   ];
 
   document.addEventListener('keydown', (event) => {
+    if (numberOfLetters == 0) return;
     const currentKey = event.key.toUpperCase();
     board[currentPosition] = currentKey;
-  });
-  useEffect(() => {
     setCurrentPosition(currentPosition + 1);
     console.log(currentPosition);
-  }, [board]);
+  });
   return (
     <div>
       <h1>Wordle</h1>
