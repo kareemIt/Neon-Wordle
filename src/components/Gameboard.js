@@ -4,9 +4,9 @@ const Gameboard = ({ board }) => {
   return (
     <div className="board-container">
       <div className="board">
-        {board.map((letter) => (
+        {board.map((letter, index) => (
           <div className="row">
-            <span>{letter}</span>
+            <span ey={index}>{letter}</span>
           </div>
         ))}
       </div>

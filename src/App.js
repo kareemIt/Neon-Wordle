@@ -38,11 +38,13 @@ export default function App() {
   ];
 
   document.addEventListener('keydown', (event) => {
-    if (numberOfLetters == 0) return;
+    if (numberLetters == 0) return;
+    if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
     board[currentPosition] = currentKey;
     setCurrentPosition(currentPosition + 1);
     console.log(currentPosition);
+    console.log(currentKey);
   });
   return (
     <div>
