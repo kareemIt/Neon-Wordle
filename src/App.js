@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import Keyboard from './components/Keyboard.js';
 import Gameboard from './components/Gameboard.js';
 
 export default function App() {
+  const [numberLetters, useNumberLetters] = useState(5);
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const keys3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
