@@ -49,9 +49,10 @@ export default function App() {
     console.log(currentPosition);
     console.log(currentKey);
   });
-  const sumbited = () => {
+  const sumbitted = () => {
     //check the board and compare it to the word
-    //then add grey/yellow/green class 
+    //for loop throuh array compare letters on gameboard with the word
+    //then add grey/yellow/green class to gameboard/Keyboard
     //reset numberLetters
   };
 
