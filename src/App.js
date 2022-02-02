@@ -36,14 +36,14 @@ export default function App() {
     '',
     '',
   ];
-  // useEffect(() => {
-  //   setCurrentPosition(currentPosition + 1);
-  // }, [currentPosition]);
+
   document.addEventListener('keydown', (event) => {
     const currentKey = event.key.toUpperCase();
     board[currentPosition] = currentKey;
-    // setCurrentPosition(currentPosition + 1);
   });
+  useEffect(() => {
+    setCurrentPosition(currentPosition + 1);
+  }, [board]);
   return (
     <div>
       <h1>Wordle</h1>
