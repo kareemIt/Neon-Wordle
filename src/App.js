@@ -43,6 +43,7 @@ export default function App() {
   });
   useEffect(() => {
     setCurrentPosition(currentPosition + 1);
+    console.log(currentPosition);
   }, [board]);
   return (
     <div>
