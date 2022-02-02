@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Keyboard from './components/Keyboard.js';
 import Gameboard from './components/Gameboard.js';
@@ -35,6 +35,15 @@ export default function App() {
     '',
     '',
   ];
+  useEffect(() => {
+    console.log(board);
+  }, [board]);
+  document.addEventListener('keydown', (event) => {
+    const currentKey = event.key.toUpperCase();
+    board.push(currentKey);
+    console.log(board);
+    console.log(currentKey);
+  });
   return (
     <div>
       <h1>Wordle</h1>

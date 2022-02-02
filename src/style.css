@@ -15,5 +15,8 @@ span {
   justify-content: center;
 }
 .board-container {
-  display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
