@@ -5,7 +5,6 @@ import Gameboard from './components/Gameboard.js';
 
 export default function App() {
   const [numberLetters, useNumberLetters] = useState(5);
-  const [row, setRow] = useState(0);
   const [currentPosition, setCurrentPosition] = useState(0);
   const word = 'hello';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
@@ -40,7 +39,7 @@ export default function App() {
   ];
 
   document.addEventListener('keydown', (event) => {
-    if (event.key == 'ENTER' && numberLetters == 0) sumbited;
+    if (event.key == 'ENTER' && numberLetters == 0) sumbitted;
     if (numberLetters == 0) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
