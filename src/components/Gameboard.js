@@ -6,7 +6,7 @@ const Gameboard = ({ board }) => {
       <div className="board">
         {board.map((letter, index) => (
           <div className="row">
-            <span ey={index}>{letter}</span>
+            <span key={index}>{letter}</span>
           </div>
         ))}
       </div>
