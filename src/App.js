@@ -49,6 +49,14 @@ export default function App() {
     console.log(currentKey);
   });
   const sumbitted = () => {
+    for (let i = 0; i < board.length; i++) {
+      if (word.includes(board[i])) {
+        //yellow
+        if (word.indexOf(a) == board[i]) {
+          //green
+        }
+      }
+    }
     //check the board and compare it to the word
     //for loop throuh array compare letters on gameboard with the word
     //then add grey/yellow/green class to gameboard/Keyboard
