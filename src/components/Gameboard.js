@@ -6,7 +6,14 @@ const Gameboard = ({ board }) => {
       <div className="board">
         {board.map((letter, index) => (
           <div className="row">
-            <span key={index}>{letter}</span>
+            {/* {_.map(letter) => (
+              <div>
+                <span>hi</span>
+                </div>
+            ))} */}
+            <span className="yellow" key={index}>
+              h{letter}
+            </span>
           </div>
         ))}
       </div>

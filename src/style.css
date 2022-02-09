@@ -4,12 +4,6 @@ p {
   text-align: center;
 }
 
-span {
-  border: red solid 2px;
-  border-radius: 10px;
-  padding: 10px 10px;
-  display: flex;
-}
 .container {
   display: flex;
   justify-content: center;
@@ -20,27 +14,31 @@ span {
   align-items: center;
   flex-grow: 1;
 }
-.default {
-  border: black solid 2px;
+span {
+  border: red solid 2px;
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
+  color: #02010a;
 }
 .yellow {
-  border: yellow solid 2px;
+  border: #fde12d solid 2px;
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
+  color: #02010a;
 }
 .green {
-  border: green solid 2px;
+  border: #03fcba solid 2px;
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
+  color: #02010a;
 }
 .grey {
   border: grey solid 2px;
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
+  color: #02010a;
 }
