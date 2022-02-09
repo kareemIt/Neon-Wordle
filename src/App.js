@@ -4,10 +4,9 @@ import Keyboard from './components/Keyboard.js';
 import Gameboard from './components/Gameboard.js';
 
 export default function App() {
-  const [numberLetters, useNumberLetters] = useState(5);
+  const [LettersLeft, useLettersLeft] = useState(5);
   const [currentPosition, setCurrentPosition] = useState(0);
-  let here = 0;
-  let stop = 5;
+  const [currentRow, setCurrentRow] = useState(0);
   const word = 'hello';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
@@ -22,15 +21,14 @@ export default function App() {
   ];
 
   document.addEventListener('keydown', (event) => {
-    if (event.key == 'ENTER' && stop == 0) sumbitted;
-    if (stop == 0) return;
+    if (event.key == 'ENTER' && LettersLeft == 0) sumbitted;
+    if (LettersLeft == 0) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
-    board[here] = currentKey;
-    here++;
-    stop--;
-    console.log(here);
-    console.log(stop);
+    console.log(currentKey);
+    board[currentRow][currentPosition] = currentKey;
+    setCurrentPosition(currentPosition++);
+    currentKey = '';
     console.log(currentKey);
   });
   const sumbitted = () => {
