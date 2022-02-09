@@ -6,46 +6,31 @@ import Gameboard from './components/Gameboard.js';
 export default function App() {
   const [numberLetters, useNumberLetters] = useState(5);
   const [currentPosition, setCurrentPosition] = useState(0);
+  let here = 0;
+  let stop = 5;
   const word = 'hello';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const keys3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
   const board = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
+    ['', '', '', '', ''],
   ];
 
   document.addEventListener('keydown', (event) => {
-    if (event.key == 'ENTER' && numberLetters == 0) sumbitted;
-    if (numberLetters == 0) return;
+    if (event.key == 'ENTER' && stop == 0) sumbitted;
+    if (stop == 0) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
-    board[currentPosition] = currentKey;
-    setCurrentPosition(currentPosition + 1);
-    console.log(currentPosition);
+    board[here] = currentKey;
+    here++;
+    stop--;
+    console.log(here);
+    console.log(stop);
     console.log(currentKey);
   });
   const sumbitted = () => {
