@@ -27,7 +27,8 @@ export default function App() {
     const currentKey = event.key.toUpperCase();
     console.log(currentKey);
     board[currentRow][currentPosition] = currentKey;
-    setCurrentPosition(currentPosition + 1);
+    setCurrentPosition(currentPosition++);
+    console.log(currentPosition);
     currentKey = '';
     console.log(currentKey);
   });
