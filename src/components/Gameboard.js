@@ -4,16 +4,13 @@ const Gameboard = ({ board }) => {
   return (
     <div className="board-container">
       <div className="board">
-        {board.map((letter, index) => (
+        {board.map((row, index) => (
           <div className="row">
-            {/* {_.map(letter) => (
-              <div>
-                <span>hi</span>
-                </div>
-            ))} */}
-            <span className="yellow" key={index}>
-              h{letter}
-            </span>
+            {row.map((letter, index) => (
+              <div className="letter">
+                <span>{letter}</span>
+              </div>
+            ))}
           </div>
         ))}
       </div>

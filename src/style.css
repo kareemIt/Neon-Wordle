@@ -3,8 +3,10 @@ p {
   font-family: Lato;
   text-align: center;
 }
-.board {
+.row {
   display: flex;
+  padding-bottom: 5px;
+  padding: 2px;
 }
 
 .container {
@@ -16,6 +18,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  padding-bottom: 5px;
 }
 span {
   border: red solid 2px;
@@ -44,4 +47,11 @@ span {
   padding: 10px 10px;
   display: flex;
   color: #02010a;
+}
+.row span {
+  height: 12px;
+  width: 12px;
+}
+.letter {
+  padding-right: 2px;
 }
