@@ -3,6 +3,9 @@ p {
   font-family: Lato;
   text-align: center;
 }
+.board {
+  display: flex;
+}
 
 .container {
   display: flex;
