@@ -20,9 +20,9 @@ export default function App() {
     ['', '', '', '', ''],
   ];
 
-  document.addEventListener('keydown', (event) => {
+  const handleKeyDown = (event) => {
     //if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
-    if (lettersLeft == 0) return;
+    if (currentPosition > 5) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
     console.log(currentKey);
@@ -30,7 +30,7 @@ export default function App() {
     console.log(currentPosition);
     setCurrentPosition(currentPosition + 1);
     console.log(currentPosition);
-  });
+  };
   // const sumbitted = () => {
   //   for (let i = 0; i < board.length; i++) {
   //     if (word.includes(board[i])) {
@@ -44,10 +44,10 @@ export default function App() {
     //for loop throuh array compare letters on gameboard with the word
     //then add grey/yellow/green class to gameboard/Keyboard
     //reset numberLetters
-  };
+ // };
 
   return (
-    <div>
+    <div onKeyDown={}>
       <h1>Wordle</h1>
       <Gameboard board={board} />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
