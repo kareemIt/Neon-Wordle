@@ -27,7 +27,8 @@ export default function App() {
     const currentKey = event.key.toUpperCase();
     console.log(currentKey);
     board[currentRow][currentPosition] = currentKey;
-    setCurrentPosition(currentPosition++);
+    console.log(currentPosition);
+    setCurrentPosition(currentPosition + 1);
     console.log(currentPosition);
   });
   const sumbitted = () => {
