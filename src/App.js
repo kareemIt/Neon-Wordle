@@ -21,6 +21,7 @@ export default function App() {
   ];
 
   const handleKeyDown = (event) => {
+    console.log(event);
     //if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
     if (currentPosition > 5) return;
     if (event.key == 'BACKSPACE');
@@ -40,14 +41,14 @@ export default function App() {
   //       }
   //     }
   //   }
-    //check the board and compare it to the word
-    //for loop throuh array compare letters on gameboard with the word
-    //then add grey/yellow/green class to gameboard/Keyboard
-    //reset numberLetters
- // };
+  //check the board and compare it to the word
+  //for loop throuh array compare letters on gameboard with the word
+  //then add grey/yellow/green class to gameboard/Keyboard
+  //reset numberLetters
+  // };
 
   return (
-    <div onKeyDown={}>
+    <div onKeyDown={handleKeyDown}>
       <h1>Wordle</h1>
       <Gameboard board={board} />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
