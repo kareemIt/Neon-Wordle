@@ -22,7 +22,7 @@ export default function App() {
 
   document.addEventListener('keydown', (event) => {
     if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
-    if (LettersLeft == 0) return;
+    if (lettersLeft == 0) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
     console.log(currentKey);
