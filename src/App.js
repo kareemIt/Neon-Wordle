@@ -21,7 +21,7 @@ export default function App() {
   ];
 
   document.addEventListener('keydown', (event) => {
-    if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
+    //if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
     if (lettersLeft == 0) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
@@ -31,15 +31,15 @@ export default function App() {
     setCurrentPosition(currentPosition + 1);
     console.log(currentPosition);
   });
-  const sumbitted = () => {
-    for (let i = 0; i < board.length; i++) {
-      if (word.includes(board[i])) {
-        //yellow
-        if (word.indexOf(a) == board[i]) {
-          //green
-        }
-      }
-    }
+  // const sumbitted = () => {
+  //   for (let i = 0; i < board.length; i++) {
+  //     if (word.includes(board[i])) {
+  //       //yellow
+  //       if (word.indexOf(a) == board[i]) {
+  //         //green
+  //       }
+  //     }
+  //   }
     //check the board and compare it to the word
     //for loop throuh array compare letters on gameboard with the word
     //then add grey/yellow/green class to gameboard/Keyboard
