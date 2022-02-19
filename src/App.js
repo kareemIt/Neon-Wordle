@@ -21,17 +21,19 @@ export default function App() {
   ];
 
   const handleKeyDown = (event) => {
-    console.log(event);
     //if (event.key == 'ENTER' && lettersLeft == 0) sumbitted;
     if (currentPosition > 5) return;
     if (event.key == 'BACKSPACE');
     const currentKey = event.key.toUpperCase();
-    console.log(currentKey);
     board[currentRow][currentPosition] = currentKey;
-    console.log(currentPosition);
-    setCurrentPosition(currentPosition + 1);
-    console.log(currentPosition);
+    setCurrentPosition((num) => num + 1);
   };
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
   // const sumbitted = () => {
   //   for (let i = 0; i < board.length; i++) {
   //     if (word.includes(board[i])) {
