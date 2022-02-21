@@ -1,12 +1,17 @@
 import React from 'react';
 
+const padArray = (arr, length) => {
+  if (length <= arr.length) return [...arr];
+  const filler = Array(length - arr.length);
+  return [...arr, ...filler];
+};
 const Gameboard = ({ board }) => {
   return (
     <div className="board-container">
       <div className="board">
         {board.map((row, index) => (
           <div className="row">
-            {row.map((letter, index) => (
+            {padArray(row, 5).map((letter, index) => (
               <div className="letter">
                 <span>{letter}</span>
               </div>
