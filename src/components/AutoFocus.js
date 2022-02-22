@@ -18,6 +18,10 @@ const AutoFocus = ({ onType, onEnter }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputEl.current.value.length < 5) return;
+    // inputEl.map((letter) => (
+    //   if(letter ==)
+
+    // ))
     inputEl.current.value = '';
     onEnter();
   };
