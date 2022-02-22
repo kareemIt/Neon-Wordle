@@ -55,3 +55,6 @@ span {
 .letter {
   padding-right: 2px;
 }
+input {
+  opacity: 0;
+}
