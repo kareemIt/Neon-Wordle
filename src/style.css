@@ -28,25 +28,13 @@ span {
   color: #02010a;
 }
 .yellow {
-  border: #fde12d solid 2px;
-  border-radius: 10px;
-  padding: 10px 10px;
-  display: flex;
-  color: #02010a;
+  border-color: #fde12d;
 }
 .green {
-  border: #03fcba solid 2px;
-  border-radius: 10px;
-  padding: 10px 10px;
-  display: flex;
-  color: #02010a;
+  border-color: #03fcba;
 }
 .grey {
-  border: grey solid 2px;
-  border-radius: 10px;
-  padding: 10px 10px;
-  display: flex;
-  color: #02010a;
+  border-color: grey;
 }
 .row span {
   height: 12px;
