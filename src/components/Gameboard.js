@@ -5,7 +5,7 @@ const padArray = (arr, length) => {
   const filler = Array(length - arr.length);
   return [...arr, ...filler];
 };
-const Gameboard = ({ board }) => {
+const Gameboard = ({ board, current, currentRow }) => {
   return (
     <div className="board-container">
       <div className="board">
@@ -13,7 +13,14 @@ const Gameboard = ({ board }) => {
           <div className="row">
             {padArray(row, 5).map((letter, index) => (
               <div className="letter">
-                <span>{letter}</span>
+                <span
+                  className={
+                    index == current && currentRow != row ? 'current' : ''
+                  }
+                  key={index}
+                >
+                  {letter}
+                </span>
               </div>
             ))}
           </div>
