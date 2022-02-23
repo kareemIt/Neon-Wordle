@@ -32,7 +32,7 @@ export default function App() {
         currentRow={currentRow}
       />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
-      <AutoFocus onType={handleKeyDown} onEnter={handleEnter} />
+      <AutoFocus onType={handleKeyDown} onEnter={handleEnter} word={word} />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AutoFocus = ({ onType, onEnter }) => {
+const AutoFocus = ({ onType, onEnter, word }) => {
   const handleKeyDown = (e) => {
     const { value } = inputEl.current;
     onType(value.toUpperCase());
@@ -18,10 +18,16 @@ const AutoFocus = ({ onType, onEnter }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputEl.current.value.length < 5) return;
-    // inputEl.map((letter) => (
-    //   if(letter ==)
-
-    // ))
+    console.log(inputEl.current.value);
+    for (let i = 0; i < inputEl.current.value.length; i++) {
+      if (word[i] == inputEl.current.value[i]) {
+        console.log('green');
+        continue;
+      }
+      if (word.includes(inputEl.current.value[i])) {
+        console.log('yellow');
+      }
+    }
     inputEl.current.value = '';
     onEnter();
   };
