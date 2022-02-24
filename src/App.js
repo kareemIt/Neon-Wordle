@@ -5,7 +5,7 @@ import Gameboard from './components/Gameboard.js';
 import AutoFocus from './components/AutoFocus';
 
 export default function App() {
-  const [currentLetter, useCurrentLetter] = useState(-1);
+  const [currentLetter, setCurrentLetter] = useState(-1);
   const [currentRow, setCurrentRow] = useState(0);
   const word = 'hello';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
@@ -15,11 +15,12 @@ export default function App() {
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
-      useCurrentLetter(word.length - 1);
+      setCurrentLetter(word.length - 1);
     }
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
   const handleEnter = () => {
+    setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
   };
 

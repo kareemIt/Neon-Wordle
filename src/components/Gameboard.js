@@ -9,13 +9,13 @@ const Gameboard = ({ board, current, currentRow }) => {
   return (
     <div className="board-container">
       <div className="board">
-        {board.map((row, index) => (
+        {board.map((row, rowIndex) => (
           <div className="row">
             {padArray(row, 5).map((letter, index) => (
               <div className="letter">
                 <span
                   className={
-                    index == current && currentRow != row ? 'current' : ''
+                    index == current && currentRow == rowIndex ? 'current' : ''
                   }
                   key={index}
                 >
