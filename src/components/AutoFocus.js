@@ -24,10 +24,13 @@ const AutoFocus = ({ onType, onEnter, word }) => {
         console.log('green');
         continue;
       }
-      if (word.includes(inputEl.current.value[i])) {
-        console.log('yellow');
-      }
+      console.log('not here');
     }
+    // for (let i = 0; i < inputEl.current.value.length; i++) {
+    //   if (word.includes(inputEl.current.value[i])) {
+    //     console.log('yellow');
+    //   }
+    // }
     inputEl.current.value = '';
     onEnter();
   };

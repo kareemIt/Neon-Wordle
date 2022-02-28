@@ -12,6 +12,18 @@ export default function App() {
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const keys3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
   const [board, setBoard] = useState(['', '', '', '', '', '']);
+  const hashMap = new Map();
+
+  const mapOfWord = () => {
+    for (let i = 0; i < word.length; i++) {
+      if (hashMap.has(word[i])) {
+        hashMap.set(word[i], hashMap.get(word[i]) + 1);
+        continue;
+      }
+      hashMap.set(word[i], 1);
+    }
+  };
+  mapOfWord();
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
