@@ -32,9 +32,10 @@ export default function App() {
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
   const handleEnter = () => {
-    const currentLetter = hashMap.get(board[currentRow][i]);
+    let currentLetter = '';
     if (board[currentRow].length < 5) return;
     for (let i = 0; i < board.length - 1; i++) {
+      currentLetter = hashMap.get(board[currentRow][i]);
       if (word[i] == board[currentRow][i] && currentLetter != 0) {
         //green
         console.log('green');
@@ -43,6 +44,7 @@ export default function App() {
       }
     }
     for (let i = 0; i < board.length - 1; i++) {
+      currentLetter = hashMap.get(board[currentRow][i]);
       if (word.includes(board[currentRow][i]) && currentLetter != 0) {
         //yellow
         console.log('yellow');
