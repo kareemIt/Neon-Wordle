@@ -24,7 +24,6 @@ export default function App() {
     }
   };
   mapOfWord(hashMap);
-  console.log(hashMap);
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
