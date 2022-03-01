@@ -7,7 +7,7 @@ import AutoFocus from './components/AutoFocus';
 export default function App() {
   const [currentLetter, setCurrentLetter] = useState(-1);
   const [currentRow, setCurrentRow] = useState(0);
-  const word = 'hello';
+  const word = 'HELLO';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const keys3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
@@ -32,17 +32,19 @@ export default function App() {
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
   const handleEnter = () => {
-    if (board.length < 5) return;
-    console.log(board.length);
-    for (let i = 0; i < board.length; i++) {
-      if (word[i] == board[i]) {
+    const currentLetter = hashMap.get(board[currentRow][i]);
+    if (board[currentRow].length < 5) return;
+    for (let i = 0; i < board.length - 1; i++) {
+      if (word[i] == board[currentRow][i] && currentLetter != 0) {
+        //green
         console.log('green');
+        hashMap.set(word[i], hashMap.get(word[i]) - 1);
         continue;
       }
-      console.log('not here');
     }
-    for (let i = 0; i < board.length; i++) {
-      if (word.includes(board[i])) {
+    for (let i = 0; i < board.length - 1; i++) {
+      if (word.includes(board[currentRow][i]) && currentLetter != 0) {
+        //yellow
         console.log('yellow');
       }
     }
