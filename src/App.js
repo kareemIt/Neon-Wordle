@@ -14,7 +14,7 @@ export default function App() {
   const [board, setBoard] = useState(['', '', '', '', '', '']);
   const hashMap = new Map();
 
-  const mapOfWord = () => {
+  const mapOfWord = (hashMap) => {
     for (let i = 0; i < word.length; i++) {
       if (hashMap.has(word[i])) {
         hashMap.set(word[i], hashMap.get(word[i]) + 1);
@@ -23,7 +23,8 @@ export default function App() {
       hashMap.set(word[i], 1);
     }
   };
-  mapOfWord();
+  mapOfWord(hashMap);
+  console.log(hashMap);
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
@@ -45,7 +46,12 @@ export default function App() {
         currentRow={currentRow}
       />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
-      <AutoFocus onType={handleKeyDown} onEnter={handleEnter} word={word} />
+      <AutoFocus
+        onType={handleKeyDown}
+        onEnter={handleEnter}
+        word={word}
+        hashMap={hashMap}
+      />
     </div>
   );
 }
