@@ -24,7 +24,6 @@ export default function App() {
     }
   };
   mapOfWord(hashMap);
-  console.log(hashMap);
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
@@ -33,6 +32,20 @@ export default function App() {
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
   const handleEnter = () => {
+    if (board.length < 5) return;
+    console.log(board.length);
+    for (let i = 0; i < board.length; i++) {
+      if (word[i] == board[i]) {
+        console.log('green');
+        continue;
+      }
+      console.log('not here');
+    }
+    for (let i = 0; i < board.length; i++) {
+      if (word.includes(board[i])) {
+        console.log('yellow');
+      }
+    }
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
   };
@@ -46,12 +59,7 @@ export default function App() {
         currentRow={currentRow}
       />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
-      <AutoFocus
-        onType={handleKeyDown}
-        onEnter={handleEnter}
-        word={word}
-        hashMap={hashMap}
-      />
+      <AutoFocus onType={handleKeyDown} onEnter={handleEnter} />
     </div>
   );
 }

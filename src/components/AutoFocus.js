@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const AutoFocus = ({ onType, onEnter, word, hashmap }) => {
+const AutoFocus = ({ onType, onEnter }) => {
   const handleKeyDown = (e) => {
     const { value } = inputEl.current;
     onType(value.toUpperCase());
@@ -14,24 +14,9 @@ const AutoFocus = ({ onType, onEnter, word, hashmap }) => {
       document.removeEventListener('keydown', focus);
     };
   }, []);
-  console.log('after' + hashmap);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputEl.current.value.length < 5) return;
-    console.log(inputEl.current.value);
-    for (let i = 0; i < inputEl.current.value.length; i++) {
-      if (word[i] == inputEl.current.value[i]) {
-        console.log('green');
-        continue;
-      }
-      console.log('not here');
-    }
-    for (let i = 0; i < inputEl.current.value.length; i++) {
-      if (word.includes(inputEl.current.value[i])) {
-        console.log('yellow');
-      }
-    }
     inputEl.current.value = '';
     onEnter();
   };
