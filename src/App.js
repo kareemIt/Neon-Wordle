@@ -38,7 +38,7 @@ export default function App() {
       currentLetter = hashMap.get(board[currentRow][i]);
       if (word[i] == board[currentRow][i] && currentLetter != 0) {
         //green
-        console.log('green');
+        console.log('green ' + board[currentRow][i]);
         hashMap.set(word[i], hashMap.get(word[i]) - 1);
         continue;
       }
@@ -47,7 +47,7 @@ export default function App() {
       currentLetter = hashMap.get(board[currentRow][i]);
       if (word.includes(board[currentRow][i]) && currentLetter != 0) {
         //yellow
-        console.log('yellow');
+        console.log('yellow ' + board[currentRow][i]);
       }
     }
     setCurrentLetter(0);
