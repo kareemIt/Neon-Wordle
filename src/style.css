@@ -27,7 +27,7 @@ body {
   padding-bottom: 5px;
 }
 span {
-  border: grey solid 2px;
+  border: white solid 2px;
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
@@ -40,6 +40,9 @@ span {
 .green {
   animation: fadeInGreen 3s;
   border-color: #03fcba;
+}
+.grey {
+  border-color: grey;
 }
 .current {
   border-color: red;
