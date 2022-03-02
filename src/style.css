@@ -3,6 +3,10 @@ p {
   font-family: Lato;
   text-align: center;
 }
+body {
+  background: black;
+  color: white;
+}
 .row {
   display: flex;
   padding-bottom: 5px;
@@ -25,7 +29,7 @@ span {
   border-radius: 10px;
   padding: 10px 10px;
   display: flex;
-  color: #02010a;
+  color: white;
 }
 .yellow {
   border-color: #fde12d;
