@@ -44,6 +44,9 @@ span {
   height: 12px;
   width: 12px;
 }
+.container span {
+  margin: 1px;
+}
 .letter {
   padding-right: 2px;
 }
