@@ -10,9 +10,9 @@ const Gameboard = ({ board, current, currentRow }) => {
     <div className="board-container">
       <div className="board">
         {board.map((row, rowIndex) => (
-          <div className="row">
+          <div className="row" key={rowIndex}>
             {padArray(row, 5).map((letter, index) => (
-              <div className="letter">
+              <div className="letter" key={index}>
                 <span
                   className={
                     index == current && currentRow == rowIndex ? 'current' : ''
