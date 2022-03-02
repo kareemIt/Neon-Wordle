@@ -23,13 +23,7 @@ const AutoFocus = ({ onType, onEnter }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        ref={inputEl}
-        class="invisible"
-        onInput={handleKeyDown}
-        type="text"
-        maxLength="5"
-      />
+      <input ref={inputEl} onInput={handleKeyDown} type="text" maxLength="5" />
     </form>
   );
 };
