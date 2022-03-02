@@ -41,6 +41,9 @@ export default function App() {
         hashMap.set(word[i], hashMap.get(word[i]) - 1);
         continue;
       }
+      //for loop hashmap check all values are zero say u win
+      //add if they run out of rows you lose
+      //disable typing either way
     }
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
