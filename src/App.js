@@ -33,7 +33,6 @@ export default function App() {
   };
   const handleEnter = () => {
     const row = board[currentRow];
-    if (board[currentRow].length < 5) return;
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
       if (word[i] == row[i] && currentLetter != 0) {

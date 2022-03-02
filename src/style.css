@@ -32,9 +32,11 @@ span {
   color: white;
 }
 .yellow {
+  animation: fadeInYellow 3s;
   border-color: #fde12d;
 }
 .green {
+  animation: fadeInGreen 3s;
   border-color: #03fcba;
 }
 .current {
@@ -51,5 +53,21 @@ span {
   padding-right: 2px;
 }
 input {
-  opacity: 0;
+  /* opacity: 0; */
+}
+@keyframes fadeInGreen {
+  from {
+    border-color: grey;
+  }
+  to {
+    border-color: #03fcba;
+  }
+}
+@keyframes fadeInYellow {
+  from {
+    border-color: grey;
+  }
+  to {
+    border-color: #fde12d;
+  }
 }

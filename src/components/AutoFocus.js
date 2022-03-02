@@ -28,7 +28,7 @@ const AutoFocus = ({ onType, onEnter }) => {
         class="invisible"
         onInput={handleKeyDown}
         type="text"
-        maxlength="5"
+        maxLength="5"
       />
     </form>
   );
