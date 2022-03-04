@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import Keyboard from './components/Keyboard.js';
 import Gameboard from './components/Gameboard.js';
@@ -20,6 +20,10 @@ export default function App() {
     'grey',
   ]);
   const hashMap = new Map();
+
+  useEffect(() => {
+    console.log('useEffect' + rowColor);
+  }, [rowColor, setCurrentRow]);
 
   const mapOfWord = (hashMap) => {
     for (let i = 0; i < word.length; i++) {
@@ -43,10 +47,20 @@ export default function App() {
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
       if (word[i] == row[i] && currentLetter != 0) {
-        //green
         console.log('green ' + row[i] + ' position ' + i);
         hashMap.set(word[i], hashMap.get(word[i]) - 1);
-        continue;
+        setRowColor(
+          rowColor.map((color, index) => {
+            if (index == i) {
+              console.log('green');
+              console.log(rowColor);
+              return 'green';
+            } else {
+              console.log('grey');
+              return 'grey';
+            }
+          })
+        );
       }
       //for loop hashmap check all values are zero say u win
       //add if they run out of rows you lose
@@ -55,11 +69,26 @@ export default function App() {
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
       if (word.includes(row[i]) && currentLetter != 0) {
-        //yellow
         console.log('yellow ' + row[i] + ' position ' + i);
         hashMap.set(row[i], hashMap.get(row[i]) - 1);
+        setRowColor(
+          rowColor.map((color, index) => {
+            if (index == i) {
+              console.log('yellow');
+              return 'yellow';
+            }
+            if (color == rowColor[i]) {
+              console.log(rowColor[i]);
+              return rowColor[i];
+            } else {
+              console.log('grey');
+              return 'grey';
+            }
+          })
+        );
       }
     }
+    console.log(rowColor);
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
   };
