@@ -5,7 +5,14 @@ const padArray = (arr, length) => {
   const filler = Array(length - arr.length);
   return [...arr, ...filler];
 };
-const Gameboard = ({ board, current, currentRow }) => {
+const Gameboard = ({ board, current, currentRow, rowColor }) => {
+  const focus = (index, rowIndex) => {
+    if (index == current && currentRow == rowIndex) {
+      return 'current';
+    } else {
+      return '';
+    }
+  };
   return (
     <div className="board-container">
       <div className="board">
@@ -13,12 +20,7 @@ const Gameboard = ({ board, current, currentRow }) => {
           <div className="row" key={rowIndex}>
             {padArray(row, 5).map((letter, index) => (
               <div className="letter" key={index}>
-                <span
-                  className={
-                    index == current && currentRow == rowIndex ? 'current' : ''
-                  }
-                  key={index}
-                >
+                <span className={focus(index, rowIndex)} key={index}>
                   {letter}
                 </span>
               </div>

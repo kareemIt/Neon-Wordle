@@ -12,6 +12,13 @@ export default function App() {
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const keys3 = ['Z', 'X', 'C', 'V', 'B', 'N', 'M'];
   const [board, setBoard] = useState(['', '', '', '', '', '']);
+  const [rowColor, setRowColor] = useState([
+    'grey',
+    'grey',
+    'grey',
+    'grey',
+    'grey',
+  ]);
   const hashMap = new Map();
 
   const mapOfWord = (hashMap) => {
@@ -64,6 +71,7 @@ export default function App() {
         board={board}
         current={currentLetter}
         currentRow={currentRow}
+        rowColor={rowColor}
       />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
       <AutoFocus onType={handleKeyDown} onEnter={handleEnter} />
