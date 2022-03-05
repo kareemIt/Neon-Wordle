@@ -15,7 +15,6 @@ const Gameboard = ({ board, current, currentRow, rowColor }) => {
   };
   const colorOfCell = () => {
     rowColor.map((color, index) => {
-      console.log(color);
       return color;
     });
   };
