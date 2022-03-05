@@ -22,8 +22,9 @@ export default function App() {
   const [hashMap, setHashMap] = useState({});
 
   useEffect(() => {
-    console.log('useEffect' + rowColor);
-  }, [rowColor, setCurrentRow]);
+    mapOfWord();
+    console.log(hashMap);
+  }, [setHashMap]);
 
   const mapOfWord = () => {
     const copyMap = { ...hashMap };
