@@ -42,7 +42,8 @@ export default function App() {
     }
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
-  const handleEnter = () => {
+
+  const handleGreen = () => {
     const row = board[currentRow];
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
@@ -62,10 +63,9 @@ export default function App() {
           })
         );
       }
-      //for loop hashmap check all values are zero say u win
-      //add if they run out of rows you lose
-      //disable typing either way
     }
+  };
+  const handleYellow = () => {
     for (let i = 0; i < board.length - 1; i++) {
       const currentLetter = hashMap.get(board[currentRow][i]);
       if (word.includes(row[i]) && currentLetter != 0) {
@@ -88,6 +88,13 @@ export default function App() {
         );
       }
     }
+  };
+  const handleEnter = () => {
+    //for loop hashmap check all values are zero say u win
+    //add if they run out of rows you lose
+    //disable typing either way
+    handleGreen();
+    handleYellow();
     console.log(rowColor);
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
