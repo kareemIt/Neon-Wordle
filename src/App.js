@@ -19,22 +19,22 @@ export default function App() {
     'grey',
     'grey',
   ]);
-  const hashMap = new Map();
+  const [hashMap, setHashMap] = useState({});
 
   useEffect(() => {
     console.log('useEffect' + rowColor);
   }, [rowColor, setCurrentRow]);
 
-  const mapOfWord = (hashMap) => {
+  const mapOfWord = () => {
+    const copyMap = { ...hashMap };
     for (let i = 0; i < word.length; i++) {
-      if (hashMap.has(word[i])) {
-        hashMap.set(word[i], hashMap.get(word[i]) + 1);
-        continue;
+      if (copyMap[word[i]]) {
+        copyMap[word[i]] = copyMap[word[i]] + 1;
       }
-      hashMap.set(word[i], 1);
+      hashMap[word[i]] = 1;
     }
+    setHashMap(copyMap);
   };
-  mapOfWord(hashMap);
 
   const handleKeyDown = (word, key) => {
     if (word != '') {
