@@ -23,8 +23,7 @@ export default function App() {
 
   useEffect(() => {
     mapOfWord();
-    console.log(hashMap);
-  }, [setHashMap]);
+  }, []);
 
   const mapOfWord = () => {
     const copyMap = { ...hashMap };
@@ -32,7 +31,7 @@ export default function App() {
       if (copyMap[word[i]]) {
         copyMap[word[i]] = copyMap[word[i]] + 1;
       }
-      hashMap[word[i]] = 1;
+      copyMap[word[i]] = 1;
     }
     setHashMap(copyMap);
   };
@@ -47,10 +46,10 @@ export default function App() {
   const handleGreen = () => {
     const row = board[currentRow];
     for (let i = 0; i < board.length - 1; i++) {
-      const currentLetter = hashMap.get(board[currentRow][i]);
+      const currentLetter = hashMap[board[currentRow][i]];
       if (word[i] == row[i] && currentLetter != 0) {
         console.log('green ' + row[i] + ' position ' + i);
-        hashMap.set(word[i], hashMap.get(word[i]) - 1);
+        hashMap[word[i]] = hashMap[word[i]] - 1;
         setRowColor(
           rowColor.map((color, index) => {
             if (index == i) {
@@ -67,11 +66,12 @@ export default function App() {
     }
   };
   const handleYellow = () => {
+    const row = board[currentRow];
     for (let i = 0; i < board.length - 1; i++) {
-      const currentLetter = hashMap.get(board[currentRow][i]);
+      const currentLetter = hashMap[board[currentRow][i]];
       if (word.includes(row[i]) && currentLetter != 0) {
         console.log('yellow ' + row[i] + ' position ' + i);
-        hashMap.set(row[i], hashMap.get(row[i]) - 1);
+        hashMap[row[i]] = hashMap[row[i]] - 1;
         setRowColor(
           rowColor.map((color, index) => {
             if (index == i) {
@@ -94,11 +94,16 @@ export default function App() {
     //for loop hashmap check all values are zero say u win
     //add if they run out of rows you lose
     //disable typing either way
+    if (board[currentRow].length < 5) {
+      return;
+    }
     handleGreen();
     handleYellow();
     console.log(rowColor);
+    console.log(hashMap);
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
+    mapOfWord();
   };
 
   return (
