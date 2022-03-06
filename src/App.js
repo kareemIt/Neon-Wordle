@@ -49,7 +49,6 @@ export default function App() {
     for (let i = 0; i < row.length; i++) {
       const currentLetter = hashMap[row[i]];
       if (word[i] == row[i] && currentLetter != 0) {
-        console.log('green ' + row[i] + ' position ' + i);
         copyMap[row[i]] = copyMap[row[i]] - 1;
         setRowColor(
           rowColor.map((color, index) => {
@@ -62,6 +61,7 @@ export default function App() {
         );
       }
     }
+    console.log(copyMap);
     setHashMap(copyMap);
   };
   const handleYellow = () => {
@@ -69,19 +69,15 @@ export default function App() {
     for (let i = 0; i < row.length; i++) {
       const currentLetter = hashMap[board[currentRow][i]];
       if (word.includes(row[i]) && currentLetter != 0) {
-        console.log('yellow ' + row[i] + ' position ' + i);
         hashMap[row[i]] = hashMap[row[i]] - 1;
         setRowColor(
           rowColor.map((color, index) => {
             if (index == i) {
-              console.log('yellow');
               return 'yellow';
             }
             if (color == rowColor[i]) {
-              console.log(rowColor[i]);
               return rowColor[i];
             } else {
-              console.log('grey');
               return 'grey';
             }
           })
