@@ -93,17 +93,19 @@ export default function App() {
       if (hashMap[word[i]] == 1 && currentRow < 5) {
         break;
       }
-      if (currentRow == 6) {
+      if (hashMap[word[i]] == 1 && currentRow == 5) {
+        console.log('hit');
         setGameEnd(word);
+        break;
       }
-      setPlayerInput("off")
+      setPlayerInput('off');
       setGameEnd('Amazing');
     }
   };
   const handleEnter = () => {
-    //for loop hashmap check all values are zero say u win
-    //add if they run out of rows you lose
-    //disable typing either way
+    if (currentRow == 5) {
+      return;
+    }
     if (board[currentRow].length < 5) {
       return;
     }
