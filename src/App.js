@@ -85,6 +85,16 @@ export default function App() {
       }
     }
   };
+  const handleGameEnd = () => {
+    if (currentRow == 6) {
+    }
+    for (let i = 0; i < hashMap.length; i++) {
+      if (hashMap[i] == 1) {
+        break;
+      }
+      console.log('amazing');
+    }
+  };
   const handleEnter = () => {
     //for loop hashmap check all values are zero say u win
     //add if they run out of rows you lose
@@ -104,6 +114,7 @@ export default function App() {
   return (
     <div>
       <h1>Wordle</h1>
+      <h1 className="answer">{word.toLowerCase() || 'amazing'}</h1>
       <Gameboard
         board={board}
         current={currentLetter}

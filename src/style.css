@@ -76,3 +76,9 @@ input {
     border-color: #fde12d;
   }
 }
+.answer {
+  margin: auto;
+  margin-bottom: 8px;
+  border: solid white 2px;
+  width: 50%;
+}
