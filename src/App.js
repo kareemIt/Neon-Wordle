@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import Keyboard from './components/Keyboard.js';
-import Gameboard from './components/Gameboard.js';
+import Keyboard from './components/Keyboard';
+import Gameboard from './components/Gameboard';
 import AutoFocus from './components/AutoFocus';
+import { handleGreen, handleYellow } from './utilities/handleColors';
 
 export default function App() {
   const [currentLetter, setCurrentLetter] = useState(-1);
@@ -37,7 +38,6 @@ export default function App() {
     }
     setHashMap(copyMap);
   };
-
   const handleKeyDown = (word, key) => {
     if (word != '') {
       setCurrentLetter(word.length - 1);
