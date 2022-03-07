@@ -103,7 +103,7 @@ export default function App() {
     }
   };
   const handleEnter = () => {
-    if (currentRow == 5) {
+    if (currentRow > 5) {
       return;
     }
     if (board[currentRow].length < 5) {
