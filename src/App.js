@@ -95,11 +95,11 @@ export default function App() {
       }
       if (hashMap[word[i]] == 1 && currentRow == 5) {
         console.log('hit');
-        setGameEnd(word);
+        setGameEnd(word.toLowerCase());
         break;
       }
       setPlayerInput('off');
-      setGameEnd('Amazing');
+      setGameEnd('amazing');
     }
   };
   const handleEnter = () => {
@@ -122,7 +122,7 @@ export default function App() {
   return (
     <div>
       <h1>Wordle</h1>
-      {gameEnd && <h1 className="answer">{gameEnd}</h1>}
+      {gameEnd && <p className="answer">{gameEnd}</p>}
       <Gameboard
         board={board}
         current={currentLetter}
