@@ -45,63 +45,6 @@ export default function App() {
     setBoard(board.map((prevWord, i) => (i === currentRow ? word : prevWord)));
   };
 
-  const handleGreen = () => {
-    const row = board[currentRow];
-    const copyMap = { ...hashMap };
-    for (let i = 0; i < row.length; i++) {
-      const currentLetter = hashMap[row[i]];
-      if (word[i] == row[i] && currentLetter != 0) {
-        copyMap[row[i]] = copyMap[row[i]] - 1;
-        setRowColor(
-          rowColor.map((color, index) => {
-            if (index == i) {
-              return 'green';
-            } else {
-              return 'grey';
-            }
-          })
-        );
-      }
-    }
-    console.log(copyMap);
-    setHashMap(copyMap);
-  };
-  const handleYellow = () => {
-    const row = board[currentRow];
-    for (let i = 0; i < row.length; i++) {
-      const currentLetter = hashMap[board[currentRow][i]];
-      if (word.includes(row[i]) && currentLetter != 0) {
-        hashMap[row[i]] = hashMap[row[i]] - 1;
-        setRowColor(
-          rowColor.map((color, index) => {
-            if (index == i) {
-              return 'yellow';
-            }
-            if (color == rowColor[i]) {
-              return rowColor[i];
-            } else {
-              return 'grey';
-            }
-          })
-        );
-      }
-    }
-  };
-  const handleGameEnd = () => {
-    const mapLength = Object.values(hashMap).length;
-    for (let i = 0; i < mapLength; i++) {
-      if (hashMap[word[i]] == 1 && currentRow < 5) {
-        break;
-      }
-      if (hashMap[word[i]] == 1 && currentRow == 5) {
-        console.log('hit');
-        setGameEnd(word.toLowerCase());
-        break;
-      }
-      setPlayerInput('off');
-      setGameEnd('amazing');
-    }
-  };
   const handleEnter = () => {
     if (currentRow > 5) {
       return;
