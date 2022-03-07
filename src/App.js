@@ -7,6 +7,7 @@ import AutoFocus from './components/AutoFocus';
 export default function App() {
   const [currentLetter, setCurrentLetter] = useState(-1);
   const [currentRow, setCurrentRow] = useState(0);
+  const [gameEnd, setGameEnd] = useState('');
   const word = 'CHOKE';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
@@ -86,13 +87,15 @@ export default function App() {
     }
   };
   const handleGameEnd = () => {
-    if (currentRow == 6) {
-    }
-    for (let i = 0; i < hashMap.length; i++) {
-      if (hashMap[i] == 1) {
+    const mapLength = Object.values(hashMap).length;
+    for (let i = 0; i < mapLength; i++) {
+      if (hashMap[word[i]] == 1 && currentRow < 5) {
         break;
       }
-      console.log('amazing');
+      if (currentRow == 6) {
+        setGameEnd(word);
+      }
+      setGameEnd('Amazing');
     }
   };
   const handleEnter = () => {
@@ -103,6 +106,7 @@ export default function App() {
       return;
     }
     handleGreen();
+    handleGameEnd();
     //handleYellow();
     console.log(rowColor);
     console.log(hashMap);
@@ -114,7 +118,7 @@ export default function App() {
   return (
     <div>
       <h1>Wordle</h1>
-      <h1 className="answer">{word.toLowerCase() || 'amazing'}</h1>
+      {gameEnd && <h1 className="answer">{gameEnd}</h1>}
       <Gameboard
         board={board}
         current={currentLetter}
