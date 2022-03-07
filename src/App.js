@@ -8,6 +8,7 @@ export default function App() {
   const [currentLetter, setCurrentLetter] = useState(-1);
   const [currentRow, setCurrentRow] = useState(0);
   const [gameEnd, setGameEnd] = useState('');
+  const [playerInput, setPlayerInput] = useState('');
   const word = 'CHOKE';
   const keys1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const keys2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
@@ -95,6 +96,7 @@ export default function App() {
       if (currentRow == 6) {
         setGameEnd(word);
       }
+      setPlayerInput("off")
       setGameEnd('Amazing');
     }
   };
@@ -126,7 +128,11 @@ export default function App() {
         rowColor={rowColor}
       />
       <Keyboard keys1={keys1} keys2={keys2} keys3={keys3} />
-      <AutoFocus onType={handleKeyDown} onEnter={handleEnter} />
+      <AutoFocus
+        onType={handleKeyDown}
+        onEnter={handleEnter}
+        playerInput={playerInput}
+      />
     </div>
   );
 }

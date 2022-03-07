@@ -60,6 +60,9 @@ span {
 input {
   opacity: 0;
 }
+.off {
+  display: none;
+}
 @keyframes fadeInGreen {
   from {
     border-color: grey;
