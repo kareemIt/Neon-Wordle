@@ -53,11 +53,11 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    //setRowColor(handleGreen(board, currentRow, hashMap, word, rowColor));
+    setHashMap(handleGreen(board, currentRow, hashMap, word, rowColor));
     //handleGameEnd();
     //handleYellow();
-    console.log(rowColor);
-    console.log(hashMap);
+    // console.log(rowColor);
+    // console.log(hashMap);
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
     //mapOfWord();
