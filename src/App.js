@@ -53,7 +53,6 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    console.log(hashMap);
     //setRowColor(handleGreen(board, currentRow, hashMap, word, rowColor));
     //handleGameEnd();
     //handleYellow();
