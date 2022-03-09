@@ -13,10 +13,10 @@ const Gameboard = ({ board, current, currentRow, rowColor }) => {
       return '';
     }
   };
-  const colorOfCell = () => {
-    rowColor.map((color, index) => {
-      return color;
-    });
+  const colorOfCell = (index, rowIndex) => {
+    for (let i = 0; i < rowColor.length; i++) {
+      return rowColor[i];
+    }
   };
   return (
     <div className="board-container">
@@ -24,9 +24,11 @@ const Gameboard = ({ board, current, currentRow, rowColor }) => {
         {board.map((row, rowIndex) => (
           <div className="row" key={rowIndex}>
             {padArray(row, 5).map((letter, index) => (
-              <div className="letter" key={index}>
+              <div className="letter">
                 <span
-                  className={focus(index, rowIndex) || colorOfCell()}
+                  className={
+                    focus(index, rowIndex) || colorOfCell(index, rowIndex)
+                  }
                   key={index}
                 >
                   {letter}

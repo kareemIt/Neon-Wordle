@@ -3,7 +3,12 @@ import './style.css';
 import Keyboard from './components/Keyboard';
 import Gameboard from './components/Gameboard';
 import AutoFocus from './components/AutoFocus';
-import { handleGreen, handleYellow } from './utilities/handleColors';
+import {
+  handleGreen,
+  handleYellow,
+  handleColorGreen,
+  handleColorYellow,
+} from './utilities/handleColors';
 
 export default function App() {
   const [currentLetter, setCurrentLetter] = useState(-1);
@@ -53,15 +58,19 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    setHashMap(handleGreen(board, currentRow, hashMap, word, rowColor));
-    //handleGameEnd();
-    //handleYellow();
+    // setHashMap(handleGreen(board, currentRow, hashMap, word));
+    // setRowColor(handleColorGreen(rowColor, hashMap, word));
     // console.log(rowColor);
-    // console.log(hashMap);
+
+    //handleGameEnd();
+    setHashMap(handleYellow(board, currentRow, hashMap, word));
+    setRowColor(handleColorYellow(rowColor, hashMap, word));
+    // console.log(rowColor);
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
     //mapOfWord();
   };
+  console.log(rowColor);
 
   return (
     <div>
