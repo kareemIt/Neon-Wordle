@@ -36,6 +36,7 @@ export default function App() {
       }
       copyMap[word[i]] = 1;
     }
+    console.log(copyMap);
     setHashMap(copyMap);
   };
   const handleKeyDown = (word, key) => {
@@ -52,8 +53,9 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    handleGreen();
-    handleGameEnd();
+    console.log(hashMap);
+    //setRowColor(handleGreen(board, currentRow, hashMap, word, rowColor));
+    //handleGameEnd();
     //handleYellow();
     console.log(rowColor);
     console.log(hashMap);
