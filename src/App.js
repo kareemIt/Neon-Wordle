@@ -41,7 +41,6 @@ export default function App() {
       }
       copyMap[word[i]] = 1;
     }
-    console.log(copyMap);
     setHashMap(copyMap);
   };
   const handleKeyDown = (word, key) => {
@@ -58,14 +57,12 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    // setHashMap(handleGreen(board, currentRow, hashMap, word));
-    // setRowColor(handleColorGreen(rowColor, hashMap, word));
-    // console.log(rowColor);
+    setHashMap(handleGreen(board, currentRow, hashMap, word));
+    setRowColor(handleColorGreen(rowColor, hashMap, word));
 
     //handleGameEnd();
-    setHashMap(handleYellow(board, currentRow, hashMap, word));
-    setRowColor(handleColorYellow(rowColor, hashMap, word));
-    // console.log(rowColor);
+    // setHashMap(handleYellow(board, currentRow, hashMap, word));
+    // setRowColor(handleColorYellow(rowColor, hashMap, word));
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
     //mapOfWord();
