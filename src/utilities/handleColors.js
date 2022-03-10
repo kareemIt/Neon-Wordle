@@ -1,5 +1,4 @@
-export const handleGreen = (board, currentRow, hashMap, word) => {
-  const row = board[currentRow];
+export const handleGreen = (row, hashMap, word) => {
   const copyMap = { ...hashMap };
   for (let i = 0; i < row.length; i++) {
     const currentLetter = hashMap[row[i]];
@@ -9,13 +8,12 @@ export const handleGreen = (board, currentRow, hashMap, word) => {
   }
   return copyMap;
 };
-export const handleYellow = (board, currentRow, hashMap, word) => {
-  const row = board[currentRow];
+export const handleYellow = (row, hashMap, word) => {
   const copyMap = { ...hashMap };
   for (let i = 0; i < row.length; i++) {
-    const currentLetter = hashMap[board[currentRow][i]];
+    const currentLetter = hashMap[row[i]];
     if (word.includes(row[i]) && currentLetter != 0) {
-      hashMap[row[i]] = hashMap[row[i]] - 1;
+      copyMap[row[i]] = copyMap[row[i]] - 1;
     }
   }
   return copyMap;

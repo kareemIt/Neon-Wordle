@@ -18,6 +18,7 @@ const Gameboard = ({ board, current, currentRow, rowColor }) => {
       return rowColor[i];
     }
   };
+  //make component for each row
   return (
     <div className="board-container">
       <div className="board">
@@ -25,12 +26,7 @@ const Gameboard = ({ board, current, currentRow, rowColor }) => {
           <div className="row" key={rowIndex}>
             {padArray(row, 5).map((letter, index) => (
               <div className="letter">
-                <span
-                  className={
-                    focus(index, rowIndex) || colorOfCell(index, rowIndex)
-                  }
-                  key={index}
-                >
+                <span className={colorOfCell(index, rowIndex)} key={index}>
                   {letter}
                 </span>
               </div>

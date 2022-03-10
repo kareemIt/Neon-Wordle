@@ -33,6 +33,7 @@ export default function App() {
     mapOfWord();
   }, []);
 
+  //put in utilities
   const mapOfWord = () => {
     const copyMap = { ...hashMap };
     for (let i = 0; i < word.length; i++) {
@@ -57,12 +58,12 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
-    setHashMap(handleGreen(board, currentRow, hashMap, word));
+    setHashMap(handleGreen(board[currentRow], hashMap, word));
     setRowColor(handleColorGreen(rowColor, hashMap, word));
 
     //handleGameEnd();
-    // setHashMap(handleYellow(board, currentRow, hashMap, word));
-    // setRowColor(handleColorYellow(rowColor, hashMap, word));
+    setHashMap(handleYellow(board[currentRow], hashMap, word));
+    setRowColor(handleColorYellow(rowColor, hashMap, word));
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
     //mapOfWord();
