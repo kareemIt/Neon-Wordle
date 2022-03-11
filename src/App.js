@@ -33,9 +33,6 @@ export default function App() {
     mapOfWord();
   }, []);
 
-  useEffect(() => {
-    
-  }, [hashMap]);
 
   //put in utilities
   const mapOfWord = () => {
