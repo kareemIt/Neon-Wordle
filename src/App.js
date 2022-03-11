@@ -33,6 +33,10 @@ export default function App() {
     mapOfWord();
   }, []);
 
+  useEffect(() => {
+    
+  }, [hashMap]);
+
   //put in utilities
   const mapOfWord = () => {
     const copyMap = { ...hashMap };
@@ -58,10 +62,11 @@ export default function App() {
     if (board[currentRow].length < 5) {
       return;
     }
+    console.log(hashMap);
     setHashMap(handleGreen(board[currentRow], hashMap, word));
-    // console.log(hashMap);
+    setHashMap((hashMap2) => hashMap2);
+    console.log(hashMap);
     setRowColor(handleColorGreen(rowColor, hashMap, word));
-    // console.log(rowColor);
 
     //handleGameEnd();
     // setHashMap(handleYellow(board[currentRow], hashMap, word));
@@ -70,8 +75,6 @@ export default function App() {
     setCurrentRow(currentRow + 1);
     //mapOfWord();
   };
-  console.log(rowColor);
-  console.log(hashMap);
 
   return (
     <div>
