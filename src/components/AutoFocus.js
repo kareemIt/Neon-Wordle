@@ -17,6 +17,9 @@ const AutoFocus = ({ onType, onEnter, playerInput }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (inputEl.current.value.length < 5) {
+      return;
+    }
     inputEl.current.value = '';
     onEnter();
   };

@@ -1,16 +1,10 @@
-export const handleGameEnd = () => {
-  const mapLength = Object.values(hashMap).length;
-  for (let i = 0; i < mapLength; i++) {
-    if (hashMap[word[i]] == 1 && currentRow < 5) {
-      break;
+export const handleGameEnd = (userString, word, currentRow) => {
+  for (let i = 0; i < userString.length; i++) {
+    if (userString[i] == word[i] && currentRow == 5) {
+      return -1;
     }
-    if (hashMap[word[i]] == 1 && currentRow == 5) {
-      console.log('hit');
-      setGameEnd(word.toLowerCase());
-      setPlayerInput('off');
-      break;
+    if (userString == word && currentRow < 5) {
+      return 1;
     }
-    setPlayerInput('off');
-    setGameEnd('amazing');
   }
 };
