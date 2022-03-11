@@ -11,7 +11,7 @@ export const handleGreen = (row, hashMap, word) => {
 export const handleYellow = (row, hashMap, word) => {
   const copyMap = { ...hashMap };
   for (let i = 0; i < row.length; i++) {
-    const currentLetter = hashMap[row[i]];
+    const currentLetter = copyMap[row[i]];
     if (word.includes(row[i]) && currentLetter != 0) {
       copyMap[row[i]] = copyMap[row[i]] - 1;
     }
@@ -19,6 +19,8 @@ export const handleYellow = (row, hashMap, word) => {
   return copyMap;
 };
 export const handleColorGreen = (rowColor, hashMap, word) => {
+  console.log('in function');
+  console.log(hashMap);
   return rowColor.map((color, index) => {
     if (hashMap[word[index]] == 0) {
       return 'green';

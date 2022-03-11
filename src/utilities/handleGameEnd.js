@@ -7,6 +7,7 @@ export const handleGameEnd = () => {
     if (hashMap[word[i]] == 1 && currentRow == 5) {
       console.log('hit');
       setGameEnd(word.toLowerCase());
+      setPlayerInput('off');
       break;
     }
     setPlayerInput('off');

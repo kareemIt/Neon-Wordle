@@ -59,16 +59,19 @@ export default function App() {
       return;
     }
     setHashMap(handleGreen(board[currentRow], hashMap, word));
+    // console.log(hashMap);
     setRowColor(handleColorGreen(rowColor, hashMap, word));
+    // console.log(rowColor);
 
     //handleGameEnd();
-    setHashMap(handleYellow(board[currentRow], hashMap, word));
-    setRowColor(handleColorYellow(rowColor, hashMap, word));
+    // setHashMap(handleYellow(board[currentRow], hashMap, word));
+    // setRowColor(handleColorYellow(rowColor, hashMap, word));
     setCurrentLetter(0);
     setCurrentRow(currentRow + 1);
     //mapOfWord();
   };
   console.log(rowColor);
+  console.log(hashMap);
 
   return (
     <div>
